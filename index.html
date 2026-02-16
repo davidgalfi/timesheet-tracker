@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timesheet Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⏱️ Timesheet Tracker</h1>
+            <p class="subtitle">Track your work hours with ease</p>
+        </header>
+
+        <div class="card">
+            <h2>Add Work Entry</h2>
+            <form id="timesheet-form">
+                <div class="form-group">
+                    <label for="work-date">Date</label>
+                    <input type="date" id="work-date" required>
+                </div>
+
+                <div class="time-inputs">
+                    <div class="form-group">
+                        <label for="start-time">Start Time</label>
+                        <input type="time" id="start-time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="end-time">End Time</label>
+                        <input type="time" id="end-time" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Entry</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="header-row">
+                <h2>Your Entries</h2>
+                <div class="period-selector">
+                    <label for="period-select">Pay Period:</label>
+                    <select id="period-select">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="summary">
+                <div class="summary-item">
+                    <span class="summary-label">Total Hours:</span>
+                    <span class="summary-value" id="total-hours">0h</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Days Worked:</span>
+                    <span class="summary-value" id="days-worked">0</span>
+                </div>
+            </div>
+
+            <div id="entries-list"></div>
+        </div>
+
+        <div class="card actions">
+            <h2>Export & Manage</h2>
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="exportAsText()">📝 Export as Text</button>
+                <button class="btn btn-secondary" onclick="exportAsExcel()">📊 Export as Excel</button>
+                <button class="btn btn-secondary" onclick="exportAsJSON()">💾 Export as JSON</button>
+                <button class="btn btn-secondary" onclick="importFromJSON()">📥 Import JSON</button>
+            </div>
+            <button class="btn btn-danger" onclick="clearAllData()">🗑️ Clear All Data</button>
+        </div>
+    </div>
+
+    <input type="file" id="import-file" accept=".json" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>
