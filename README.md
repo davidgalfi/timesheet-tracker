@@ -19,7 +19,7 @@ A simple, mobile-friendly web application for tracking work hours with automatic
 ## How to Use
 
 ### Live Demo
-Visit: **https://timesheettracker.up.railway.app**
+Visit: **[https://timesheettracker.up.railway.app](https://timesheettracker.up.railway.app)**
 
 ### Run Locally
 1. Download or clone this repository
